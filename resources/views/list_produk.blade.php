@@ -8,8 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <input type="checkbox" value="synthwave" class="toggle theme-controller ml-10 mt-5" />
     <div class="overflow-x-auto">
-        <div class="ml-10 mt-20">
+        <div class="ml-10 mt-10">
             <table class="table">
                 <thead>
                     <tr class="bg-base-200">
