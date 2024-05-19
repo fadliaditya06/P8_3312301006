@@ -32,5 +32,38 @@
                 </tbody>
             </table>
         </div>
+        <div class="ml-10 mt-10">
+            <p class="text-2xl">Input Produk</p>
+            <form method="POST" action="{{ route('produk.simpan') }}">
+                <div class="space-y-6">
+                    @csrf
+                    <div class="sm:col-span-3">
+                        <label for="nama" class="block text-base font-medium leading-6 text-gray-900">Nama</label>
+                        <div class="mt-2">
+                            <input type="text" id="nama" name="nama"
+                                class="block w-full max-w-lg rounded-md border border-lime-700 py-2 px-3 text-gray-900 shadow-sm focus:border-lime-700 focus:ring-lime-700 hover:border-lime-700 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="col-span-full">
+                        <label for="deskripsi" class="block text-base font-medium leading-6 text-gray-900">Deskripsi</label>
+                        <div class="mt-2">
+                            <textarea id="deskripsi" name="deskripsi" rows="3"
+                                class="block w-full max-w-lg rounded-md border border-lime-700 py-2 px-3 text-gray-900 shadow-sm focus:border-lime-700 focus:ring-lime-700 hover:border-lime-700 sm:text-sm"></textarea>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label for="harga" class="block text-base font-medium leading-6 text-gray-900">Harga</label>
+                        <div class="mt-2">
+                            <input id="harga" name="harga" type="number"
+                                class="block w-full max-w-lg rounded-md border border-lime-700 py-2 px-3 text-gray-900 shadow-sm focus:border-lime-700 focus:ring-lime-700 hover:border-lime-700 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="btn bg-sky-500 hover:bg-sky-500">Simpan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
