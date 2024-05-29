@@ -18,15 +18,23 @@
                         <th>Nama Produk</th>
                         <th>Deskripsi Produk</th>
                         <th>Harga Produk</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($nama as $index => $item)
                     <tr class="bg-base-200">
-                        <td>{{$index + 1}}</td>
-                        <td>{{ $item}}</td>
-                        <td>{{ $desc[$index]}}</td>
-                        <td>{{ $harga[$index]}}</td>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $item }}</td>
+                        <td>{{ $desc[$index] }}</td>
+                        <td>{{ $harga[$index] }}</td>
+                        <td>
+                            <form action="{{ route('produk.delete', $id[$index]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn bg-red-600 hover:bg-red-600" onclick="return confirm('Are you sure you want to delete {{ $item }}?')">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -45,7 +53,8 @@
                         </div>
                     </div>
                     <div class="col-span-full">
-                        <label for="deskripsi" class="block text-base font-medium leading-6 text-gray-900">Deskripsi</label>
+                        <label for="deskripsi"
+                            class="block text-base font-medium leading-6 text-gray-900">Deskripsi</label>
                         <div class="mt-2">
                             <textarea id="deskripsi" name="deskripsi" rows="3"
                                 class="block w-full max-w-lg rounded-md border border-lime-700 py-2 px-3 text-gray-900 shadow-sm focus:border-lime-700 focus:ring-lime-700 hover:border-lime-700 sm:text-sm"></textarea>
